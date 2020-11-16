@@ -1,0 +1,3 @@
+It seems like a jsp file with SQL queries is needed to dynamically use a database to populate a webpage, which I created in Netbeans and just added the same HTML code below the database code (I also added a table feature to the html code to test it but since it is empty it just looks really weird on the webpage).  For some reason, it says it connects fine on my computer before I added the SQL query but when I ran it afterwards, it just crashed and said it couldn't connect.
+The Glassfish server file is from the Netbeans tutorial file I was following that used the Glassfish server to host the app
+I used the css file as well but didn't upload that since it's already here

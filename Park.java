@@ -18,13 +18,14 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
-public class ConnectionMYSQL {
+
+public class Park {
     public static void main(String[] args)
     {
-        String query = "SELECT ride_name FROM ride WHERE park_name = 'Disney World'";
         Connection db = null;
         Statement stmt = null;
         ResultSet rs = null;
+        String query = "SELECT * FROM park";
         try{
             db = Connectiondb.getdb();
             stmt = db.prepareStatement(query);
@@ -32,12 +33,14 @@ public class ConnectionMYSQL {
             rs = stmt.executeQuery(query);
            
             while(rs.next()){
-            System.out.println(rs.getString("ride_name"));
+             String parkName = rs.getString("park_name");
+             System.out.println(parkName);
               }
         }
         catch(SQLException ex){
-                Logger.getLogger(ConnectionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Park.class.getName()).log(Level.SEVERE, null, ex);
                 }
+        
         finally
         {
             if (rs != null) {

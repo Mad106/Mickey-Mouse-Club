@@ -18,10 +18,11 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
-public class ConnectionMYSQL {
+
+public class Show {
     public static void main(String[] args)
     {
-        String query = "SELECT ride_name FROM ride WHERE park_name = 'Disney World'";
+        String query = "SELECT * FROM show";
         Connection db = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -32,30 +33,31 @@ public class ConnectionMYSQL {
             rs = stmt.executeQuery(query);
            
             while(rs.next()){
-            System.out.println(rs.getString("ride_name"));
+             String showName = rs.getString("show_name");
+             System.out.println(showName);
               }
         }
         catch(SQLException ex){
-                Logger.getLogger(ConnectionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Show.class.getName()).log(Level.SEVERE, null, ex);
                 }
         finally
         {
             if (rs != null) {
         try {
             rs.close();
-        } catch (SQLException e) { /* ignored */}
+        } catch (SQLException e) {}
         
             }
             if (stmt != null) {
         try {
             stmt.close();
-        } catch (SQLException e) { /* ignored */}
+        } catch (SQLException e) {}
         
             }
         if (db != null) {
         try {
             db.close();
-        } catch (SQLException e) { /* ignored */}
+        } catch (SQLException e) {}
             }
         }
         

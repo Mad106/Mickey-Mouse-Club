@@ -13,15 +13,16 @@ import connectiondb.Connectiondb;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.*;
+// import java.util.*;
+// import java.sql.*;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
-public class ConnectionMYSQL {
+public class Ride {
     public static void main(String[] args)
     {
-        String query = "SELECT ride_name FROM ride WHERE park_name = 'Disney World'";
+        String query = "SELECT * FROM ride";
         Connection db = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -32,11 +33,12 @@ public class ConnectionMYSQL {
             rs = stmt.executeQuery(query);
            
             while(rs.next()){
-            System.out.println(rs.getString("ride_name"));
+             String rideName = rs.getString("ride_name");
+             System.out.println(rideName);
               }
         }
         catch(SQLException ex){
-                Logger.getLogger(ConnectionMYSQL.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Ride.class.getName()).log(Level.SEVERE, null, ex);
                 }
         finally
         {

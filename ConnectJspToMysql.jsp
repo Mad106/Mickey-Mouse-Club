@@ -46,10 +46,6 @@ out.println("Unable to connect to database.");
 }
 %>
 </TABLE><TABLE>
-<TR>
-<TD><FORM ACTION="index.jsp" method="get" >
-<button type="submit"><-- back</button></TD>
-</TR>
 </TABLE>
 </font>
 </body>

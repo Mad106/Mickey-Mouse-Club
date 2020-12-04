@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package connectionmysql;
 
 /**
  *
@@ -29,9 +28,9 @@ public class Show {
         try{
             db = Connectiondb.getdb();
             stmt = db.prepareStatement(query);
-            
+
             rs = stmt.executeQuery(query);
-           
+
             while(rs.next()){
              String showName = rs.getString("show_name");
              System.out.println(showName);
@@ -46,13 +45,13 @@ public class Show {
         try {
             rs.close();
         } catch (SQLException e) {}
-        
+
             }
             if (stmt != null) {
         try {
             stmt.close();
         } catch (SQLException e) {}
-        
+
             }
         if (db != null) {
         try {
@@ -60,6 +59,6 @@ public class Show {
         } catch (SQLException e) {}
             }
         }
-        
+
     }
 }

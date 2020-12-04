@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package connectionmysql;
-
+package connectiondb;
 /**
  *
  * @author Ashen Eyes
@@ -28,9 +27,9 @@ public class Subpark {
         try{
             db = Connectiondb.getdb();
             stmt = db.prepareStatement(query);
-            
+
             rs = stmt.executeQuery(query);
-           
+
             while(rs.next()){
              String subName = rs.getString("subpark_name");
              System.out.println(subName);
@@ -45,13 +44,13 @@ public class Subpark {
         try {
             rs.close();
         } catch (SQLException e) { /* ignored */}
-        
+
             }
             if (stmt != null) {
         try {
             stmt.close();
         } catch (SQLException e) { /* ignored */}
-        
+
             }
         if (db != null) {
         try {
@@ -59,6 +58,6 @@ public class Subpark {
         } catch (SQLException e) { /* ignored */}
             }
         }
-        
+
     }
 }
